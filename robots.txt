@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://italiascommesse.com/sitemap.xml
