@@ -1,13 +1,13 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Lazy initialize the client to prevent top-level crashes if process.env is missing at load time
-let ai: GoogleGenAI | null = null;
+let ai: GoogleGenerativeAI | null = null;
 
 const getAiClient = () => {
     if (!ai) {
         // Safe access to process.env to prevent crashes in environments where it might be undefined
         const apiKey = (typeof process !== 'undefined' && process.env && process.env.API_KEY) ? process.env.API_KEY : 'MISSING_KEY';
-        ai = new GoogleGenAI({ apiKey });
+        ai = new GoogleGenerativeAI({ apiKey });
     }
     return ai;
 }

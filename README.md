@@ -18,3 +18,14 @@ View your app in AI Studio: https://ai.studio/apps/drive/106rQUtKEXjWBgshpVglDuM
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Deploy to Cloudflare Pages
+
+1. Push your code to a GitHub repository.
+2. Go to Cloudflare Pages dashboard.
+3. Create a new project and connect your GitHub repo.
+4. Set build settings:
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+5. Add environment variable `GEMINI_API_KEY` in the Pages settings.
+6. Deploy!
