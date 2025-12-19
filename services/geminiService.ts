@@ -5,9 +5,8 @@ let ai: GoogleGenAI | null = null;
 
 const getAiClient = () => {
     if (!ai) {
-        // Safe access to process.env to prevent crashes in environments where it might be undefined
-        const apiKey = (typeof process !== 'undefined' && process.env && process.env.API_KEY) ? process.env.API_KEY : 'MISSING_KEY';
-        ai = new GoogleGenAI({ apiKey });
+        // Per guidelines, API key must be obtained from process.env.API_KEY directly.
+        ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     }
     return ai;
 }
@@ -42,7 +41,7 @@ export const sendMessageToAssistant = async (message: string): Promise<string> =
   try {
     const client = getAiClient();
     const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3-flash-preview',
       contents: message,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,

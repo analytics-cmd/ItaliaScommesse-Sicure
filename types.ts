@@ -22,7 +22,6 @@ export interface Operator {
   };
   promoCode: string;
   bonusOffer: string;
-  link: string; // This will be managed by linkManager but kept for reference if needed
   category: 'sports' | 'casino' | 'hybrid';
   reviewAuthor: string;
   reviewDate: string;
