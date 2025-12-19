@@ -42,7 +42,7 @@ export const sendMessageToAssistant = async (message: string): Promise<string> =
   try {
     const client = getAiClient();
     const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3-flash-preview',
       contents: message,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
